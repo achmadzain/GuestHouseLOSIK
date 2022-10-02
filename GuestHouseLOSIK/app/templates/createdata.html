@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Data</title>
+</head>
+<body>
+    <h1>Create Data</h1>
+    <form action=""method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>Nama</th>
+                <td>
+                    <input type="text" name="nama">
+                </td>
+            </tr>
+            <tr>
+                <th>Jenis Kelamin</th>
+                <td>
+                    <select name="jeniskelamin" id="">
+                        <option value="Laki-laki">Laki-laki</option>
+                        <option value="Perempuan">Perempuan</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Tanggal Lahir</th>
+                <td>
+                    <input type="date" name="tanggallahir">
+                </td>
+            </tr>
+            <tr>
+                <th>No HP</th>
+                <td>
+                    <input type="number" name="nohp">
+                </td>
+            </tr>
+            <tr>
+                <th>Email Pelanggan</th>
+                <td>
+                    <input type="email" name="emailplg">
+                </td>
+            </tr>
+            <tr>
+                <th>Alamat</th>
+                <td>
+                    <input type="text" name="alamat">
+                </td>
+            </tr>
+        </table>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

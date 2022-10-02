@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemesanan</title>
+</head>
+<body>
+    <h1>Pemesanan</h1>
+    <table>
+        <tr>
+            <th>Kode Booking</th>
+            <th>ID Pelanggan</th>
+            <th>ID Resepsionis</th>
+            <th>ID Kamar</th>
+            <th>Check In</th>
+            <th>Check Out</th>
+            <th>Lama Menginap</th>
+        </tr>
+        {% for item in allpemesananobj %}
+        <tr>
+            <td>{{ item.KodeBooking }}</td>
+            <td>{{ item.ID_pelanggan }}</td>
+            <td>{{ item.ID_resepsionis }}</td>>
+            <td>{{ item.ID_kamar }}</td>
+            <td>{{ item.CheckIn }}</td>
+            <td>{{ item.CheckOut }}</td>
+            <td>{{ item.LamaMenginap }}</td>
+            <td>
+                <a href="{%url 'checkout' item.KodeBooking%}">
+                    <button>CheckOut</button>
+                </a>
+            </td>
+            <td>
+                <a href="{%url 'createpembayaran' item.KodeBooking%}">
+                    <button>Bayar</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

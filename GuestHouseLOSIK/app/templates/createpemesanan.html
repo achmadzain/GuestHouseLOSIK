@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masukkan Data Pemesanan</title>
+</head>
+<body>
+    <h1>Masukkan Data Pemesanan</h1>
+    <form action=""method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>ID Pelanggan</th>
+                <td>
+                    <select name="ID_pelanggan" id="">
+                        {% for item in datapelanggan %}
+                        <option value= "{{item.ID_pelanggan}}">{{item}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>ID Resepsionis</th>
+                <td>
+                    <select name="ID_resepsionis" id="">
+                        {% for item in dataresepsionis %}
+                        <option value= "{{item.ID_resepsionis}}">{{item}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>ID Kamar</th>
+                <td>
+                    <select name="ID_kamar" id="">
+                        {% for item in datakamar %}
+                        <option value= "{{item.ID_kamar}}">{{item}}</option>
+                        {% endfor %}
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Check In</th>
+                <td>
+                    <input type="date" name="CheckIn">
+                </td>
+            </tr>
+            <tr>
+                <th>Check Out</th>
+                <td>
+                    <input type="date" name="CheckOut">
+                </td>
+            </tr>
+        </table>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

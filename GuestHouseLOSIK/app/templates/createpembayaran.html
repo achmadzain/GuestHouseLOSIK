@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Masukkan Data Pembayaran</h1>
+    <form action=""method="post">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <th>Kode Booking</th>
+                <td>
+                    <input type="text" name="KodeBooking" value="{{datapemesanan.KodeBooking}}">
+                </td>
+            </tr>
+            <tr>
+                <th>Metode Pembayaran</th>
+                <td>
+                    <select name="MetodePembayaran" id="">
+                        <option value="Tunai">Tunai</option>
+                        <option value="Non-Tunai">Non-Tunai</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>Tanggal Pembayaran</th>
+                <td>
+                    <input type="date" name="TanggalPembayaran">
+                </td>
+            </tr>
+        </table>
+        <button type="submit">submit</button>
+    </form>
+</body>
+</html>

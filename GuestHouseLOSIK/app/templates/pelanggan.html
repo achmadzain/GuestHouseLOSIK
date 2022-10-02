@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pelanggan</title>
+</head></head>
+<body>
+    <h1>Pelanggan</h1>
+    <table>
+        <tr>
+            <th>ID Pelanggan</th>
+            <th>Nama</th>
+            <th>Jenis Kelamin</th>
+            <th>Tanggal Lahir</th>
+            <th>No HP</th>
+            <th>Email Pelanggan</th>
+            <th>Alamat</th>
+        </tr>
+        {% for item in allpelangganobj %}
+        <tr>
+            <td>{{ item.ID_pelanggan }}</td>
+            <td>{{ item.nama }}</td>
+            <td>{{ item.jeniskelamin }}</td>
+            <td>{{ item.tanggallahir }}</td>
+            <td>{{ item.nohp }}</td>
+            <td>{{ item.emailplg }}</td>
+            <td>{{ item.alamat }}</td>
+            <td>
+                <a href="{%url 'updatedata' item.ID_pelanggan%}">
+                    <button>Update</button>
+                </a>
+                <a href="{%url 'deletedata' item.ID_pelanggan%}">
+                    <button>Delete</button>
+                </a>
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

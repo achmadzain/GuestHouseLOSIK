@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenis Kamar</title>
+</head>
+<body>
+    <h1>Jenis Kamar</h1>
+    <table>
+        <tr>
+            <th>Jenis Kamar</th>
+            <th>Harga</th>
+            <th>Deskripsi Kamar</th>
+        </tr>
+        {% for item in alljeniskamarobj %}
+        <tr>
+            <td>{{ item.ID_jenisKamar }}</td>
+            <td>{{ item.HargaKamar }}</td>
+            <td>{{ item.DeskripsiKamar }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

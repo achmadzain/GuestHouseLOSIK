@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pembayaran</title>
+</head>
+<body>
+    <h1>Pembayaran</h1>
+    <table>
+        <tr>
+            <th>ID Pembayaran</th>
+            <th>Kode Booking</th>
+            <th>Metode Pembayaran</th>
+            <th>Tanggal Pembayaran</th>
+        </tr>
+        {% for item in allpembayaranobj %}
+        <tr>
+            <td>{{ item.ID_Pembayaran }}</td>
+            <td>{{ item.KodeBooking }}</td>
+            <td>{{ item.MetodePembayaran }}</td>
+            <td>{{ item.TanggalPembayaran }}</td>
+            <td>
+                <a href="{%url 'nota' item.ID_Pembayaran%}">
+                    <button>Nota</button>
+                </a> 
+            </td>
+            
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kamar</title>
+</head>
+<body>
+    <h1>Kamar</h1>
+    <table>
+        <tr>
+            <th>ID Kamar</th>
+            <th>Jenis Kamar</th>
+            <th>Nomor Kamar</th>
+            <th>Status Kamar</th>
+        </tr>
+        {% for item in allkamarobj %}
+        <tr>
+            <td>{{ item.ID_kamar }}</td>
+            <td>{{ item.jeniskamar }}</td>
+            <td>{{ item.nokamar }}</td>
+            {% if item.statuskamar == False %}
+            <td>Tidak Tersedia</td>
+            {% else %}
+            <td>Tersedia</td>
+            {% endif %}
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>

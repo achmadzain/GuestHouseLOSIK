@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resepsionis</title>
+</head>
+<body>
+    <h1>Resepsionis</h1>
+    <table>
+        <tr>
+            <th>ID Resepsionis</th>
+            <th>Nama</th>
+            <th>Jenis Kelamin</th>
+            <th>No HP</th>
+            <th>Kata Sandi</th>
+        </tr>
+        {% for item in allresepsionisobj %}
+        <tr>
+            <td>{{ item.ID_resepsionis }}</td>
+            <td>{{ item.nama }}</td>
+            <td>{{ item.jeniskelamin }}</td>>
+            <td>{{ item.nohp }}</td>
+            <td>{{ item.katasandi }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
